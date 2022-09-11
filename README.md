@@ -1,5 +1,5 @@
 # Final Report GSOC 2022
-![[Pasted image 20220912005210.png]]
+![[GSOC.png]]
 #### Organisation: [mlpack](https://github.com/mlpack)
 
 #### Project: Enhance CMA-ES from existing implementation in ensmallen - a optimization header library.
