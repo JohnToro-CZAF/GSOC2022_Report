@@ -1,6 +1,7 @@
 # Final Report GSOC 2022
 <p align="center">
 <a href="https://summerofcode.withgoogle.com/"><img style="padding: 20px;" alt="drawing" src="src/gsoc.jpeg" height="200"></a>
+
 #### Organisation: [mlpack](https://github.com/mlpack)
 
 #### Project: Enhance CMA-ES from existing implementation in ensmallen - a optimization header library.
@@ -17,7 +18,7 @@ Since the CMA-ES has many default parameters that are calculated on the way of o
 ## Result
 Since the design is most difficult part, throughout the period of GSoC we experimented different design to fit to our planned variants - IPOP and other variants that modified only the part of updating the parameters. After many experiments we came up with a design that fits perfectlly to variants that only change the updating part and intialize population parameters. A fully functional `CMAES` base class was implemeted and throughly tested. Also I added two new updating policies - the main part of variants: VD-CMA and Sep-CMA. These two new variants are very effective in running time - their running time are linear with the solving dimension. With the new policy of initializing mutation's weights - `NegativeWeight`, now the algorithm can run in more consistent speed. Here is the result of running multiple combination of policies together - the experiment was done by running algorithms on logistic regression task with gisette dataset - [details](https://archive.ics.uci.edu/ml/datasets/Gisette). 
 
-<a href=""><img style="padding: 5px;" alt="drawing" src="src/benchmark.png" height="500" width="800"></a>
+<a href=""><img style="padding: 5px;" alt="drawing" src="src/benchmark.png" height="500" width="1400"></a>
 <br><hr>
 All of my work in wrapped in one pull request only. You can have a look at this at:
 [Pull Request #349 : Implementation of negative weights, Sep-CMA, VD-CMA. Sep and VD CMA achieving linear time complexity](https://github.com/mlpack/ensmallen/pull/349).
